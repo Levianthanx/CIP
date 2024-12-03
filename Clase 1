@@ -3,11 +3,20 @@ Informacio: es el conjuntos de la información
 Conocimientos : es el uso conjunto de la información.
 
 LOS CUATROS TIPOS DE ANALÍTICA
+/////
 1.Descriptiva
-Se enfoca en recopilar, limpiar y presentar datos para obtener información inmediata. Se utiliza para responder a preguntas sencillas, como la cantidad de productos vendidos en un periodo o la producción general. 
+Se enfoca en recopilar, limpiar y presentar datos para obtener información inmediata. Se utiliza para responder a preguntas sencillas, 
+Ejemplo:como la cantidad de productos vendidos en un periodo o la producción general. 
+/////
 2.Predictiva
-Se basa en información histórica y matemática avanzada para predecir resultados futuros. Se utiliza para crear modelos de datos con los comportamientos estimados. 
+Se basa en información histórica y matemática avanzada para predecir resultados futuros. Se utiliza para crear modelos de datos con los comportamientos estimados.
+Ejemplo: Utilizar modelos predictivos para estimar las ventas futuras en función de los datos de ventas anteriores y factores como las tendencias de mercado.
+/////
 3.Diagnóstica
 Se utiliza para identificar la causa de un problema. 
+Ejemplo: Analizar por que estan bajando las  ventas de un producto en particular durante el último trimestre para determinar si fue debido a la temporada.
+//////
 4.Prescriptiva
 Se utiliza para determinar qué resultado será el mejor en un escenario dado. Se emplean testeos y otras técnicas para ello
+Ejemplo: Un sistema de recomendación en una tienda en línea que sugiere productos a los usuarios basándose en su historial de compras y preferencias, ayudando
+a aumentar las ventas o tambien pueden ser de acuerdo a que este presentado un paciente mediente se puede medircar sieto medicamentos.
