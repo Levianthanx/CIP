@@ -1,0 +1,90 @@
+def Ara():
+    inventorio = []  
+    def mostrar_items():
+        
+            print("mostrando items:")
+            for id,item in enumerate(inventorio,start=1):
+                  print(f"{id}. {item['nombre']} - Precio: ${item['precio']:.2f} - Cantidad: {item['cantidad']}")
+
+    def agregar_items():
+        
+        print("Agrega los ítems al inventario. Escribe 'salir' para finalizar.")
+        while True:
+            nombre = input("Nombre del ítem (o 'salir' para terminar): ")
+            if nombre.lower() == "salir":
+                break
+            try:
+                precio = float(input("Precio del ítem: "))
+                cantidad = int(input("Cantidad del ítem: "))
+                inventorio.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})
+                print(f"¡Ítem '{nombre}' agregado con exito!")
+            except ValueError:
+                print("Por favor, ingresa un precio y cantidad válidos.")
+
+    def Actualizar_items():
+       
+        nombre = input("Ingrese el nombre del ítem a actualizar: ")
+        for item in inventorio:
+            if item['nombre'].lower() == nombre.lower():
+                print(f"Ítem encontrado: {item['nombre']} - Precio: ${item['precio']:.2f} - Cantidad: {item['cantidad']}")
+                precio = float(input("Ingrese el nuevo precio (o deje en blanco para no cambiar): ") or item['precio'])
+                cantidad = int(input("Ingrese la nueva cantidad (o deje en blanco para no cambiar): ") or item['cantidad'])
+                item['precio'] = precio
+                item['cantidad'] = cantidad
+                print(f"¡Ítem '{nombre}' actualizado con exito!")
+                return
+        print(f"No se encontró el ítem '{nombre}'.")
+
+    def borrar_items():
+        
+        nombre = input("Ingrese el nombre del ítem a eliminar: ")
+        for item in inventorio:
+            if item['nombre'].lower() == nombre.lower():
+                inventorio.remove(item)
+                print(f"¡Ítem '{nombre}' eliminado con exito!")
+                return
+        print(f"No se encontró el ítem '{nombre}'.")
+
+    def mostrar_stokcs_bajos():
+      
+        low_stock = [item for item in inventorio if item['cantidad'] < 5]
+        if not low_stock:
+            print("No hay ítems con cantidad menor a 5.")
+        else:
+            print("Ítems con cantidad menor a 5:")
+            for item in low_stock:
+                print(f"{item['nombre']} - Precio: ${item['precio']:.2f} - Cantidad: {item['cantidad']}")
+
+  
+    mostrar_stokcs_bajos()
+
+
+
+    while True:
+        print("Opciones:")
+        print("1. Mostrar ítems")
+        print("2. Agregar ítem")
+        print("3. Eliminar ítem")
+        print("4. Actualizar ítem")
+        print("5. Mostrar ítems con cantidad menor a 5")  
+        print("6. Salir")
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            mostrar_items()
+        elif opcion == "2":
+            agregar_items()
+        elif opcion == "3":
+            borrar_items()
+        elif opcion == "4":
+            Actualizar_items()
+        elif opcion == "5":
+            mostrar_stokcs_bajos()
+        elif opcion == "6":
+            print("¡Gracias por usar el programa! adiós.")
+            break
+        else: 
+            print("Opción inválida. Inténtelo de nuevo.")
+
+
+Ara()
