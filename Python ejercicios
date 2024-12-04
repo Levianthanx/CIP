@@ -1,0 +1,94 @@
+#1)
+////////////
+def determinar_grupo(nombre, edad):
+    nombre = nombre.lower()
+    es_vocal = nombre[0] in 'aeiou'
+    
+    if edad < 18 and es_vocal:
+        return "Grupo 1"
+    elif edad > 18 and not es_vocal:
+        return "Grupo 2"
+    else:
+        return "Grupo 3"
+
+
+def main():
+    print("Clasificación de grupos")
+    nombre = input("Por favor, ingresa tu nombre: ").strip()
+    
+    while True:
+        try:
+            edad = int(input("Por favor, ingresa tu edad: ").strip())
+            break  
+        except ValueError:
+            print("Error: La edad debe ser un número entero. Inténtalo de nuevo.")
+    
+    grupo = determinar_grupo(nombre, edad)
+    print(f"{nombre}, perteneces al {grupo}.")
+
+
+
+main()
+
+#2)//////////
+def determinar_grupo(pais, nombre):
+  
+    
+    pais = pais.lower().strip()
+    longitud_nombre = len(nombre.strip())
+    
+    if pais == "colombia" and longitud_nombre < 5:
+        return "Grupo A"
+    elif pais == "mexico" and longitud_nombre >= 5:
+        return "Grupo B"
+    else:
+        return "No pertenece a ningún grupo"
+
+def main():
+    print("Clasificación de grupos por país y longitud de nombre")
+    pais = input("Por favor, ingresa tu país de origen: ")
+    nombre = input("Por favor, ingresa tu nombre: ")
+    
+    grupo = determinar_grupo(pais, nombre)
+    print(f"{nombre}, {grupo}.")
+
+
+main()
+
+#3)///////////////////
+def calcular_bono_y_nivel(puntuacion):
+  
+    if puntuacion < 1.0 or puntuacion > 5.0:
+        return "Puntuación no válida. Debe estar entre 1.0 y 5.0.", 0
+
+    #calculo de valor de reputacion
+    if puntuacion == 1.0:
+        nivel = "Bajo"
+    elif puntuacion == 3.0:
+        nivel = "Medio"
+    elif puntuacion >= 4.5:
+        nivel = "Excelente"
+
+    bono = puntuacion * 3_000_000
+
+    return nivel, bono
+
+
+def main():
+    print("Ingresa puntuacion para la determinacion de tu bono(Puntuación entre 1.0 y 5.0)")
+    
+    try:
+        puntuacion = float(input("Por favor, ingresa la puntuación del proyecto: ").strip())
+        nivel, bono = calcular_bono_y_nivel(puntuacion)
+        
+        if bono > 0:
+            print(f"Nivel de rendimiento: {nivel}")
+            print(f"Bono recibido: ${bono:,.2f}")
+        else:
+            print(nivel)  
+    except ValueError:
+        print("Error: La puntuación debe ser un número decimal válido.")
+
+
+main()
+
